@@ -11,7 +11,7 @@
 - name: importing roles from common role
   ansible.builtin.import_role:
     name: common
-    tasks_from: app-pre-req.yaml
+    tasks_from: app-pre-req
 
 - name: copy conf file
   ansible.builtin.template:
