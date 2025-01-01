@@ -17,7 +17,7 @@
 
 - name: Run tasks/other.yaml instead of 'main'
   ansible.builtin.import_role:
-    name: myrole
+    name: common
     tasks_from: app-pre-req.yaml
 
 - name: install npm
@@ -46,7 +46,7 @@
     name: all
     state: import
 
-- name: Restart service cron on centos, in all cases, also issue daemon-reload to pick up config changes
+- name: Restart service
   ansible.builtin.systemd_service:
     state: restarted
     daemon_reload: true
